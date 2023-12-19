@@ -122,6 +122,9 @@ z-index: 999;
 .dm{
   
   transform: translateX(-30px);
+  @media (max-width: 500px) {
+    transform: translateX(0px);
+  }
 }
 
 // .nim{

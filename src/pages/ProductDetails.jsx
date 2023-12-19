@@ -55,8 +55,8 @@ const ProductDetails = () => {
         <Container>
             <div className="container-fluid">
                 <div className="row container pt-2">
-                    <div className="col-md-6">
-                        <img src={`${host}/api/product/product-photo/${product._id}`} alt="product-photo" height={'400px'} width={'400px'} className='img img-responsive' />
+                    <div className="col-md-6 itx">
+                        <img src={`${host}/api/product/product-photo/${product._id}`} alt="product-photo" height={'400px'} width={'400px'} className='img img-responsive it' />
                     </div>
                     <div className="col-md-6 text-center mt-4 details">
                         {/* <h1>Product Details</h1> */}
@@ -135,6 +135,10 @@ max-width: 100vw;
       }
       margin-bottom: 20px;
      height: 420px !important;
+     @media (max-width: 500px) {
+      width: 80% !important;
+      margin: 15px auto;
+    }
   }
   .cb{
     background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)),url('https://images.unsplash.com/photo-1612835362596-4b0b2b1b0b0b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZCUyMGJsb2NrJTIwY29sb3JmdWwlMjBjb3VudHJ5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');
@@ -184,6 +188,7 @@ max-width: 100vw;
     transition: all 0.5s ease-in-out;
     width: 100%;
     height: 180px !important;
+    
   }
   .details{
     border: 1px solid black;
@@ -195,6 +200,27 @@ max-width: 100vw;
  
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
                   url('https://images.unsplash.com/photo-1612835362596-4b0b2b1b0b0b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZCUyMGJsb2NrJTIwY29sb3JmdWwlMjBjb3VudHJ5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');
+
+   @media(max-width: 500px){
+    padding: 20px;
+    font-size: 1rem;
+    margin: 0 10px !important;
+    padding: 1rem 2rem;
+   }               
+  }
+
+  .it{
+    
+    @media(max-width: 500px){
+      // transform: trasnlateX(-50px);
+      width: 100%;
+    }
+   
+  .itx{
+    @media(max-width: 500px){
+      // transform: trasnlateX(-50px);
+    }
+  }  
   }
   
 `

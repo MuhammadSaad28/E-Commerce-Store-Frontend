@@ -45,6 +45,7 @@ const Orders = () => {
                       orders.map((order,index)=>{
                         return(
                           <div className="border shadow mb-3">
+                            <div className="tab">
                             <table className="table">
                               <thead className='text-center'>
                                 <tr>
@@ -67,6 +68,7 @@ const Orders = () => {
                                 </tr>
                               </tbody>
                             </table>
+                            </div>
                             <div className="container">
                             {order?.products?.map((product) => (
               <div className="row border-bottom pb-2 itemss">
@@ -121,6 +123,15 @@ min-height: 80vh;
   height: 100px;
   width: 100px;
   padding: 10px 0;
+}
+.tab{
+  // overflow-x: scroll;
+  @media(max-width: 500px){
+    overflow-x: scroll;
+  }
+}
+.table{
+  overflowX: scroll;
 }
 `
 

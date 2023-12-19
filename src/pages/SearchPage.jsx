@@ -12,7 +12,7 @@ const SearchPage = () => {
       <div className="container-fluid">
     <div className='container'>
        <div className="text-center">
-        <h1>Search Results</h1>
+        <h1 className='mt-4'>Search Results</h1>
         <h6>{search?.results?.length < 1 ? "No Products Found" : `Found ${search?.results?.length}`}</h6>
         <div className="d-flex flex-wrap mt-4">
               {
@@ -77,6 +77,10 @@ h5{
     }
     margin-bottom: 20px;
    height: 200% !important;
+   @media (max-width: 500px) {
+    width: 80% !important;
+    margin: 15px auto;
+  }
 }
 .cb{
   background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)),url('https://images.unsplash.com/photo-1612835362596-4b0b2b1b0b0b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZCUyMGJsb2NrJTIwY29sb3JmdWwlMjBjb3VudHJ5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');
