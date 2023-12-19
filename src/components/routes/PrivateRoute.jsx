@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Spinner from "../Spinner";
-import { AdminRouteAPI, host } from "../../APIs/ApiCalls";
+import {  PrivateRouteAPI, host } from "../../APIs/ApiCalls";
 
 
 export default function PrivateRoute(){
@@ -14,7 +14,7 @@ export default function PrivateRoute(){
 
     useEffect(() => {
        const authCheck = async ()=>{
-           const res = await axios.get(`${host}/${AdminRouteAPI}`)
+           const res = await axios.get(`${host}/${PrivateRouteAPI}`)
            if(res.data.ok){
             setOk(true)
            }else{
