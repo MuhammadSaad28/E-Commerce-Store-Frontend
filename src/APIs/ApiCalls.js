@@ -1,5 +1,5 @@
-// export const host = "http://localhost:2200";
-export const host = "https://e-commerce-store-backend-production.up.railway.app";
+export const host = "http://localhost:2200";
+// export const host = "https://e-commerce-store-backend-production.up.railway.app";
 
 export const AdminRouteAPI = "api/auth/admin-auth";
 export const PrivateRouteAPI = "api/auth/user-auth";
