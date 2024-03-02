@@ -3,9 +3,24 @@ import { useSearch } from '../components/context/Search'
 import styled from 'styled-components'
 import img from './dashboard.png'
 import { host } from '../APIs/ApiCalls'
+import { useCart } from "../components/context/CartContext";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {  useNavigate } from "react-router-dom";
+
 
 const SearchPage = () => {
     const [search, setSearch] = useSearch();
+    const navigate = useNavigate();
+  const [cart, setCart] = useCart();
+
+  const tostifyOption = {
+    position: "bottom-right",
+    autoClose: 8000,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "light",
+  };
   return (
     <Container>
        <img src={img} alt="SnapCart Banner" className='pic' />
@@ -26,8 +41,32 @@ const SearchPage = () => {
                         <p className="card-text">{product.description.substring(0, 30)}</p>
                         <p className="card-text">Price: {product.price}</p>
                         <div className='d-flex buts'>
-                          <button href="#" className='btn btn-secondary but'>More Details</button>
-                          <button href="#" className='btn btn-secondary but'>Add to Cart</button>
+                          {/* <button href="#" className='btn btn-secondary but'>More Details</button>
+                          <button href="#" className='btn btn-secondary but'>Add to Cart</button> */}
+                          <button
+                            href="#"
+                            className="btn btn-secondary but"
+                            onClick={() => navigate(`/product/${product.slug}`)}
+                          >
+                            More Details
+                          </button>
+                          <button
+                            href="#"
+                            className="btn btn-secondary but"
+                            onClick={() => {
+                              setCart((prevCart) => [...prevCart, product]);
+                              localStorage.setItem(
+                                "cart",
+                                JSON.stringify([...cart, product])
+                              );
+                              toast.success(
+                                `${product.name} added to cart`,
+                                tostifyOption
+                              );
+                            }}
+                          >
+                            Add to Cart
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -39,6 +78,7 @@ const SearchPage = () => {
        </div>
     </div>
     </div>
+    <ToastContainer/>
     </Container>
   )
 }
